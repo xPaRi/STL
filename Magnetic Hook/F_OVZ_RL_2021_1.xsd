@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:include schemaLocation="F_OVZ_common_2021_1.xsd" />
+
+    <!-- form element -->
+    <xsd:element name="F_OVZ_RL">
+        <xsd:complexType>
+
+            <xsd:all>
+                <xsd:element name="meta-info" type="MetaInfoTyp" />
+
+                <xsd:element name="sekce1" type="Sekce1Typ" />
+                <xsd:element name="sekce2" type="Sekce2Typ" />
+                <xsd:element name="sekce3" type="Sekce3Typ" />
+            </xsd:all>
+
+            <xsd:attribute name="version" type="ShortStringTyp" use="required" fixed="2021" />
+            <xsd:attribute name="revision" type="ShortStringTyp" use="required" fixed="1" />
+
+        </xsd:complexType>
+    </xsd:element>
+    <!-- end of form element -->
+
+    <!-- sekce complex types -->
+    <xsd:complexType name="Sekce1Typ">
+        <xsd:all>
+            <xsd:element name="radneDoplneneHlaseni" type="RadneDoplneneHlaseniTyp" />
+            <xsd:element name="rok" type="RokTyp" fixed="2021" />
+
+            <xsd:element name="ohlasovatel" type="OhlasovatelOvzTyp" />
+
+            <xsd:element name="odpovednyPracovnik" type="ZpracovatelTyp" />
+            <xsd:element name="hlaseniVyplnil" type="ZpracovatelTyp" />
+
+            <xsd:element name="certifikaty" type="CertifikatyTyp" minOccurs="0" />
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="Sekce2Typ">
+        <xsd:all>
+            <xsd:element name="ziskFluorPlyn" type="xsd:boolean" />
+            <xsd:element name="ziskFluorPlynZar" type="xsd:boolean" />
+            <xsd:element name="predFluorPlyn" type="xsd:boolean" />
+            <xsd:element name="predFluorPlynZar" type="xsd:boolean" />
+            <xsd:element name="zneskFluorPlyn" type="xsd:boolean" />
+            <xsd:element name="prvniUvedeniRegul" type="xsd:boolean" />
+            <xsd:element name="znovuZiskRegul" type="xsd:boolean" />
+            <xsd:element name="znovuZiskRegulRecyk" type="xsd:boolean" />
+            <xsd:element name="recyklaceRegul" type="xsd:boolean" />
+            <xsd:element name="regeneraceRegul" type="xsd:boolean" />
+            <xsd:element name="zneskodnRegul" type="xsd:boolean" />
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="Sekce3Typ">
+        <xsd:all>
+            <xsd:element name="tab2a" type="TabulkaLatkaStatTyp" minOccurs="0" />
+            <xsd:element name="tab2az" type="TabulkaLatkaStatTyp" minOccurs="0" />
+            <xsd:element name="tab2b" type="TabulkaLatkaStatTyp" minOccurs="0" />
+            <xsd:element name="tab2bz" type="TabulkaLatkaStatTyp" minOccurs="0" />
+            <xsd:element name="tab2c" type="TabulkaLatkaPrevzatoTyp" minOccurs="0" />
+            <xsd:element name="tab2d1" type="TabulkaLatkaZiskanoTyp" minOccurs="0" />
+            <xsd:element name="tab2d2" type="TabulkaLatkaZpusobTyp" minOccurs="0" />
+            <xsd:element name="tab2d2a" type="TabulkaLatkaZpusobTyp" minOccurs="0" />
+            <xsd:element name="tab2d3" type="TabulkaLatkaZpusobTyp" minOccurs="0" />
+            <xsd:element name="tab2d4" type="TabulkaLatkaZpusobTyp" minOccurs="0" />
+            <xsd:element name="tab2d5" type="TabulkaLatkaZiskanoTyp" minOccurs="0" />
+        </xsd:all>
+    </xsd:complexType>
+    <!-- end of sekce complex types -->
+
+    <!-- complex types -->
+
+    <xsd:complexType name="CertifikatyTyp">
+        <xsd:sequence>
+            <xsd:element name="certifikat" type="CertifikatTyp" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="CertifikatTyp">
+        <xsd:all>
+            <xsd:element name="certifikat" type="LongStringTyp" minOccurs="0" />
+            <xsd:element name="cisloCertifikatu" type="LongStringTyp" minOccurs="0" />
+            <xsd:element name="zeDne" type="xsd:date" minOccurs="0" />
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="TabulkaLatkaStatTyp">
+        <xsd:sequence>
+            <xsd:element name="zaznam" type="ZaznamLatkaStatTyp" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ZaznamLatkaStatTyp">
+        <xsd:sequence>
+            <xsd:element name="latka" type="LongStringTyp" />
+            <xsd:element name="mnozstvi" type="Decimal3FrTyp" />
+            <xsd:element name="mnEkvCO2" type="Decimal3FrTyp" />
+            <xsd:element name="stat" type="LongStringTyp" />
+            <xsd:element name="jednotka" type="ShortStringTyp" fixed="kg" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TabulkaLatkaZpusobTyp">
+        <xsd:sequence>
+            <xsd:element name="zaznam" type="ZaznamLatkaZpusobTyp" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ZaznamLatkaZpusobTyp">
+        <xsd:sequence>
+            <xsd:element name="latka" type="LongStringTyp" />
+            <xsd:element name="mnozstvi" type="Decimal3FrTyp" />
+            <xsd:element name="zpusobNakladani" type="LongStringTyp" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TabulkaLatkaPrevzatoTyp">
+        <xsd:sequence>
+            <xsd:element name="zaznam" type="ZaznamLatkaPrevzatoTyp" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ZaznamLatkaPrevzatoTyp">
+        <xsd:sequence>
+            <xsd:element name="latka" type="LongStringTyp" />
+            <xsd:element name="mnozstvi" type="Decimal3FrTyp" />
+            <xsd:element name="mnEkvCO2" type="Decimal3FrTyp" />
+            <xsd:element name="prevzatoOd" type="LongStringTyp" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TabulkaLatkaZiskanoTyp">
+        <xsd:sequence>
+            <xsd:element name="zaznam" type="ZaznamLatkaZiskanoTyp" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ZaznamLatkaZiskanoTyp">
+        <xsd:sequence>
+            <xsd:element name="latka" type="LongStringTyp" />
+            <xsd:element name="mnozstvi" type="Decimal3FrTyp" />
+            <xsd:element name="ziskanoOd" type="LongStringTyp" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- end of complex types -->
+
+</xsd:schema>
