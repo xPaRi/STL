@@ -1,0 +1,1 @@
+SD Card Holder /ru by PinCodihe on Thingiverse: https://www.thingiverse.com/thing:6416820
