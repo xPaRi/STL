@@ -1,0 +1,10 @@
+C:\dev\STL\Gygloš\EggBotPlotter\bin\Debug\EggBotPlotter.exe.config
+C:\dev\STL\Gygloš\EggBotPlotter\bin\Debug\EggBotPlotter.exe
+C:\dev\STL\Gygloš\EggBotPlotter\bin\Debug\EggBotPlotter.pdb
+C:\dev\STL\Gygloš\EggBotPlotter\obj\Debug\EggBotPlotter.csproj.AssemblyReference.cache
+C:\dev\STL\Gygloš\EggBotPlotter\obj\Debug\EggBotPlotter.Form1.resources
+C:\dev\STL\Gygloš\EggBotPlotter\obj\Debug\EggBotPlotter.Properties.Resources.resources
+C:\dev\STL\Gygloš\EggBotPlotter\obj\Debug\EggBotPlotter.csproj.GenerateResource.cache
+C:\dev\STL\Gygloš\EggBotPlotter\obj\Debug\EggBotPlotter.csproj.CoreCompileInputs.cache
+C:\dev\STL\Gygloš\EggBotPlotter\obj\Debug\EggBotPlotter.exe
+C:\dev\STL\Gygloš\EggBotPlotter\obj\Debug\EggBotPlotter.pdb
